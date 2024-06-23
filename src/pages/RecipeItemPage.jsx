@@ -4,14 +4,13 @@ import {
   Image,
   Flex,
   Button,
-  UnorderedList,
-  ListItem,
 } from "@chakra-ui/react";
 import { IngredientsListing } from "../components/Ingredients";
+import { HealthLabelListing } from "../components/ui/HealthLabels";
 
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
-  const { mealType, totalTime, ingredientLines } = recipe;
+  const { mealType, totalTime, ingredientLines, healthLabels } = recipe;
 
   const formatMealType = (mealTypeArray) => {
     return mealTypeArray.map((type) => type.toUpperCase()).join(", ");
@@ -68,8 +67,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                 
               </Text>
               <IngredientsListing ingredients={ingredientLines} />
-              
-            </Text>
+              <HealthLabelListing healthlabels={healthLabels}/>
+             </Text>
             <Button
               onClick={clickFn}
               variant="ghost"
