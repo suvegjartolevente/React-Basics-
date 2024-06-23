@@ -5,10 +5,10 @@ import { data } from "./utils/data";
 import { RecipeItemPage } from "./pages/RecipeItemPage";
 
 export const App = () => {
-  console.log(data);
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleItemClick = (recipe) => {
+    console.log("Recipe clicked:", recipe); // Debugging statement
     setSelectedItem(recipe);
   };
 
@@ -20,7 +20,7 @@ export const App = () => {
     <ChakraProvider>
       <div className="App">
         {selectedItem ? (
-          <RecipeItemPage item={selectedItem} clickFn={handleBackToMainPage} />
+          <RecipeItemPage recipe={selectedItem} clickFn={handleBackToMainPage} />
         ) : (
           <RecipeListPage onItemClick={handleItemClick} />
         )}
