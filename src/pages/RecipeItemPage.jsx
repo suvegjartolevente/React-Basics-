@@ -1,8 +1,11 @@
 import { Box, Text, Image, Flex, Button } from "@chakra-ui/react";
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
-  
-    
+  const { mealType, totalTime, ingredientLines } = recipe;
+
+  const formatMealType = (mealTypeArray) => {
+    return mealTypeArray.map((type) => type.toUpperCase()).join(", ");
+  };
 
   return (
     <Box
@@ -23,7 +26,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
         overflow="hidden"
       >
         <Flex direction="column" align="center">
-          <Box flex="1" minH="300px">
+          <Box p={6} textAlign="center"></Box>
+          <Box flex="1" minH="400px" mb={6}>
             <Image
               src={recipe.image}
               alt={recipe.label}
@@ -32,9 +36,28 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               h="100%"
             />
           </Box>
+
           <Box p={6} textAlign="center">
+            <Text fontSize="md" mb={4}>
+              {formatMealType(mealType)}
+            </Text>
             <Text fontSize="2xl" fontWeight="bold" mb={4}>
               {recipe.label}
+            </Text>
+
+            <Text fontSize="md" mb={4}>
+              Total cooking time: <Text as="span" fontWeight="bold">
+                {totalTime} minutes
+              </Text> 
+            </Text>
+            <Text fontSize="md" mb={4}>
+              Service:{" "}
+              <Text as="span" fontWeight="bold">
+                {recipe.yield}
+              </Text>
+              <Text fontSize="2xl" fontWeight="bold" mb={4}>
+              {ingredientLines}
+            </Text>
             </Text>
             <Button
               onClick={clickFn}
