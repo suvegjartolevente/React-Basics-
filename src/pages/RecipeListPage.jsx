@@ -12,7 +12,7 @@ export const RecipeListPage = ({ onItemClick }) => {
             <RecipeItemCard
               key={index}
               recipe={hit.recipe}
-              onClick={() => onItemClick(index)}
+              onClick={() => onItemClick(hit.recipe)}
             />
           ))}
         </SimpleGrid>

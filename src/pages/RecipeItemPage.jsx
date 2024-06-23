@@ -34,26 +34,54 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               {recipe.label}
             </Text>
             <Text fontSize="md" mb={4}>
-              {recipe.ingredients}
+              Ingredients:
             </Text>
-            <Flex mt={2} mb={4}>
-              {recipe.healthLabels.map((dietlabels, cautions) => (
+            <Box mb={4}>
+              {recipe.ingredientLines.map((ingredient, index) => (
+                <Text key={index} fontSize="md">
+                  {ingredient}
+                </Text>
+              ))}
+            </Box>
+            <Text fontSize="md" mb={4}>
+              Health Labels:
+            </Text>
+            <Flex mt={2} mb={4} wrap="wrap">
+              {recipe.healthLabels.map((label, index) => (
                 <Box
-                  key={dietlabels}
+                  key={index}
                   bg="teal.500"
                   color="white"
                   borderRadius="md"
                   px={3}
                   py={1}
-                  mx={1}
+                  m={1}
                 >
-                  {cautions}
+                  {label}
+                </Box>
+              ))}
+            </Flex>
+            <Text fontSize="md" mb={4}>
+              Cautions:
+            </Text>
+            <Flex mt={2} mb={4} wrap="wrap">
+              {recipe.cautions.map((caution, index) => (
+                <Box
+                  key={index}
+                  bg="red.500"
+                  color="white"
+                  borderRadius="md"
+                  px={3}
+                  py={1}
+                  m={1}
+                >
+                  {caution}
                 </Box>
               ))}
             </Flex>
             <Flex justifyContent="center" mt={4}>
               <Button
-                onClick={() => clickFn()}
+                onClick={clickFn}
                 variant="ghost"
                 bg="purple.500"
                 padding={5}

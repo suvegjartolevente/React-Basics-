@@ -1,8 +1,9 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 
-export const RecipeItemCard = ({ recipe }) => {
+export const RecipeItemCard = ({ recipe, onClick }) => {
   return (
     <Box
+      onClick={onClick}
       cursor="pointer"
       display="flex"
       flexDirection="column"
