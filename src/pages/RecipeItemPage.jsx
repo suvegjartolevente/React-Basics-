@@ -1,4 +1,14 @@
-import { Box, Text, Image, Flex, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Image,
+  Flex,
+  Button,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
+import { IngredientsListing } from "../components/Ingredients";
+
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
   const { mealType, totalTime, ingredientLines } = recipe;
@@ -46,18 +56,19 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
             </Text>
 
             <Text fontSize="md" mb={4}>
-              Total cooking time: <Text as="span" fontWeight="bold">
+              Total cooking time:{" "}
+              <Text as="span" fontWeight="bold">
                 {totalTime} minutes
-              </Text> 
+              </Text>
             </Text>
             <Text fontSize="md" mb={4}>
               Service:{" "}
               <Text as="span" fontWeight="bold">
                 {recipe.yield}
+                
               </Text>
-              <Text fontSize="2xl" fontWeight="bold" mb={4}>
-              {ingredientLines}
-            </Text>
+              <IngredientsListing ingredients={ingredientLines} />
+              
             </Text>
             <Button
               onClick={clickFn}
