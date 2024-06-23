@@ -3,6 +3,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 export const RecipeItemCard = ({ recipe }) => {
   return (
     <Box
+      cursor="pointer"
       display="flex"
       flexDirection="column"
       alignItems="center"
