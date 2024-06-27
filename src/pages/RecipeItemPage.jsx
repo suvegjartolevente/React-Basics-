@@ -1,9 +1,12 @@
 import { Box, Text, Image, Flex, Button } from "@chakra-ui/react";
 import { IngredientsListing } from "../components/Ingredients";
 import { LabelListing } from "../components/ui/LabelTypes";
+import { TotalNutrients } from "../components/TotalNutrients";
+
+
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
-  const { mealType, totalTime, ingredientLines, healthLabels, dietLabels, cautions } =
+  const { mealType, totalTime, ingredientLines, healthLabels, dietLabels, cautions, totalNutrients } =
     recipe;
 
   const formatMealType = (mealTypeArray) => {
@@ -69,6 +72,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               {cautions && cautions.length > 0 && (
                 <LabelListing listLabels={cautions} title="Cautions:" bgColor="#e37dc8" />
               )}
+              <TotalNutrients nutrients={totalNutrients}/>
             </Text>
             <Button
               onClick={clickFn}
