@@ -1,16 +1,10 @@
-import {
-  Box,
-  Text,
-  Image,
-  Flex,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Text, Image, Flex, Button } from "@chakra-ui/react";
 import { IngredientsListing } from "../components/Ingredients";
-import { HealthLabelListing } from "../components/ui/HealthLabels";
-
+import { LabelListing } from "../components/ui/HealthAndDietLabels";
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
-  const { mealType, totalTime, ingredientLines, healthLabels } = recipe;
+  const { mealType, totalTime, ingredientLines, healthLabels, dietLabels } =
+    recipe;
 
   const formatMealType = (mealTypeArray) => {
     return mealTypeArray.map((type) => type.toUpperCase()).join(", ");
@@ -19,7 +13,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
   return (
     <Box
       w="100vw"
-      h="100vh"
+      //   h="100vh"
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -64,11 +58,11 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               Service:{" "}
               <Text as="span" fontWeight="bold">
                 {recipe.yield}
-                
               </Text>
               <IngredientsListing ingredients={ingredientLines} />
-              <HealthLabelListing healthlabels={healthLabels}/>
-             </Text>
+              <LabelListing healthlabels={healthLabels} />
+              <LabelListing healthlabels={dietLabels} />
+            </Text>
             <Button
               onClick={clickFn}
               variant="ghost"
