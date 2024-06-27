@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import { Box, Button, List, ListItem } from '@chakra-ui/react';
 
-export const ExpandableList = ({ children }) => {
+export const ExpandableListTwo = ({ items }) => {
   const [showAll, setShowAll] = useState(false);
 
   const handleToggle = () => {
     setShowAll(!showAll);
   };
 
-  const childrenArray = React.Children.toArray(children);
-  const itemsToShow = showAll ? childrenArray : childrenArray.slice(0, 5);
+  const itemsToShow = showAll ? items : items.slice(0, 5);
 
   return (
     <Box>
       <List spacing={3}>
-        {itemsToShow.map((child, index) => (
+        {itemsToShow.map((item, index) => (
           <ListItem key={index}>
-            {child}
+            {item}
           </ListItem>
         ))}
       </List>
-      {childrenArray.length > 5 && (
+      {items.length > 5 && (
         <Button onClick={handleToggle} mt={2}>
           {showAll ? 'Show Less' : 'Show More'}
         </Button>
