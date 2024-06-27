@@ -2,17 +2,17 @@ import { Box, Text, Image, Flex, Button } from "@chakra-ui/react";
 import { IngredientsListing } from "../components/Ingredients";
 import { LabelListing } from "../components/ui/LabelTypes";
 import { TotalNutrients } from "../components/TotalNutrients";
-import { ExpandableListTwo } from "../components/ExpandTest";
-  import { ExpandableList } from "../components/ui/ExpandableList";
-
-
 
 export const RecipeItemPage = ({ recipe, clickFn }) => {
-  const { mealType, totalTime, ingredientLines, healthLabels, dietLabels, cautions, totalNutrients } =
-    recipe;
-
-    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; 
-    const nutris = <TotalNutrients/>
+  const {
+    mealType,
+    totalTime,
+    ingredientLines,
+    healthLabels,
+    dietLabels,
+    cautions,
+    totalNutrients,
+  } = recipe;
 
   const formatMealType = (mealTypeArray) => {
     return mealTypeArray.map((type) => type.toUpperCase()).join(", ");
@@ -66,28 +66,30 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               Service:{" "}
               <Text as="span" fontWeight="bold">
                 {recipe.yield}
-                </Text>
+              </Text>
               <IngredientsListing ingredients={ingredientLines} />
               {healthLabels && healthLabels.length > 0 && (
-                <LabelListing listLabels={healthLabels} title="Health labels:" bgColor="#c974e8" />
+                <LabelListing
+                  listLabels={healthLabels}
+                  title="Health labels:"
+                  bgColor="#c974e8"
+                />
               )}
               {dietLabels && dietLabels.length > 0 && (
-                <LabelListing listLabels={dietLabels} title="Diet:" bgColor="#52e385" />
+                <LabelListing
+                  listLabels={dietLabels}
+                  title="Diet:"
+                  bgColor="#52e385"
+                />
               )}
               {cautions && cautions.length > 0 && (
-                <LabelListing listLabels={cautions} title="Cautions:" bgColor="#e37dc8" />
+                <LabelListing
+                  listLabels={cautions}
+                  title="Cautions:"
+                  bgColor="#e37dc8"
+                />
               )}
-              
-              <ExpandableList>
-              <TotalNutrients nutrients={totalNutrients}/>
-              </ExpandableList>
-              
-              <ExpandableListTwo items={numbers.map(number => `${number}`)}>
-              <TotalNutrients nutrients={numbers}/>
-
-              </ExpandableListTwo>
-              
-              
+              <TotalNutrients nutrients={totalNutrients} />
             </Text>
             <Button
               onClick={clickFn}

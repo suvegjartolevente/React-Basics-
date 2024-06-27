@@ -1,24 +1,54 @@
-import { Box, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Text, Button } from "@chakra-ui/react";
 
 export const TotalNutrients = ({ nutrients }) => {
-    
-    const nutritions = Object.keys(nutrients).map((key) => ({
-      label: nutrients[key].label,
-      quantity: nutrients[key].quantity,
-      unit: nutrients[key].unit,
-    }));
+  const [showAll, setShowAll] = useState(false);
+
   
-    return (
-      <Box>
-        <Text fontSize="lg" fontWeight="bold" mb={2}>
-          Total Nutrients
+  const allNutritions = Object.keys(nutrients).map((key) => ({
+    label: nutrients[key].label,
+    quantity: nutrients[key].quantity,
+    unit: nutrients[key].unit,
+  }));
+
+  const initialNutritions = allNutritions.slice(0, 5);
+
+  const handleToggle = () => {
+    setShowAll(!showAll);
+  };
+
+  return (
+    <Box>
+      <Text fontSize="lg" fontWeight="bold" mb={2}>
+        Total Nutrients
+      </Text>
+
+      {initialNutritions.map((nutrition, index) => (
+        <Text key={index}>
+          {nutrition.label}: {nutrition.quantity} {nutrition.unit}
         </Text>
-        
-        {nutritions.map((nutrition, index) => (
+      ))}
+
+     
+      {!showAll && allNutritions.length > 5 && (
+        <Button onClick={handleToggle} mt={2}>
+          Show More
+        </Button>
+      )}
+
+      {showAll &&
+        allNutritions.slice(5).map((nutrition, index) => (
           <Text key={index}>
             {nutrition.label}: {nutrition.quantity} {nutrition.unit}
           </Text>
         ))}
-      </Box>
-    );
-  };
+
+    
+      {showAll && (
+        <Button onClick={handleToggle} mt={2}>
+          Show Less
+        </Button>
+      )}
+    </Box>
+  );
+};
