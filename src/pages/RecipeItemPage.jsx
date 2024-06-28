@@ -89,7 +89,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   bgColor="#e37dc8"
                 />
               )}
-              <TotalNutrients nutrients={totalNutrients} />
+              <TotalNutrients alignItems="left" nutrients={totalNutrients} />
             </Text>
             <Button
               onClick={clickFn}
