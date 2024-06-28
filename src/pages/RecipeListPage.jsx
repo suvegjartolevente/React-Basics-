@@ -2,7 +2,7 @@ import { Center, Heading, SimpleGrid } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeItemCard } from "../components/ui/RecipeItemCard.jsx";
 
-export const RecipeListPage = ({ onItemClick }) => {
+export const RecipeListPage = ({ recipes, onItemClick }) => {
   return (
     <>
       <Center flexDir="column" py={8}>

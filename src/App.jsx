@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RecipeListPage } from "./pages/RecipeListPage";
-import { data } from "./utils/data"; 
 import { RecipeItemPage } from "./pages/RecipeItemPage";
+import { DishSearch } from "./components/DishSearch";
 
 export const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -20,9 +20,15 @@ export const App = () => {
     <ChakraProvider>
       <div className="App">
         {selectedItem ? (
-          <RecipeItemPage recipe={selectedItem} clickFn={handleBackToMainPage} />
+          <RecipeItemPage
+            recipe={selectedItem}
+            clickFn={handleBackToMainPage}
+          />
         ) : (
-          <RecipeListPage onItemClick={handleItemClick} />
+          <>
+            <RecipeListPage onItemClick={handleItemClick} />
+            {/* <DishSearch onItemClick={setSelectedItem} />  */}
+          </>
         )}
       </div>
     </ChakraProvider>
