@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import { RecipeListPage } from "./pages/RecipeListPage";
+import { ChakraProvider, Box } from "@chakra-ui/react";
+// import { RecipeListPage } from "./pages/RecipeListPage";
 import { RecipeItemPage } from "./pages/RecipeItemPage";
 import { DishSearch } from "./components/DishSearch";
+import { data } from "./utils/data";
 
 export const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleItemClick = (recipe) => {
-    console.log("Recipe clicked:", recipe); // Debugging statement
+    console.log("Recipe clicked:", recipe);
     setSelectedItem(recipe);
   };
 
@@ -18,19 +19,25 @@ export const App = () => {
 
   return (
     <ChakraProvider>
-      <div className="App">
+      <Box
+        className="App"
+        p={4}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        minHeight="100vh"
+      >
         {selectedItem ? (
           <RecipeItemPage
             recipe={selectedItem}
             clickFn={handleBackToMainPage}
           />
         ) : (
-          <>
-            <RecipeListPage onItemClick={handleItemClick} />
-            {/* <DishSearch onItemClick={setSelectedItem} />  */}
-          </>
+          <DishSearch className="DishSearch" display="flex"
+          alignItems="center"
+          justifyContent="center" recipes={data.hits} onItemClick={handleItemClick} />
         )}
-      </div>
+      </Box>
     </ChakraProvider>
   );
 };
