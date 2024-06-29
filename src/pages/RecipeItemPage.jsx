@@ -35,16 +35,17 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
         boxShadow="lg"
         overflow="hidden"
       >
-        
         <Flex direction="column" align="center">
-        <Button
+          <Button
             onClick={clickFn}
             variant="ghost"
             bg="purple.500"
             padding={5}
             color="white"
             _hover={{ bg: "teal.800" }}
-          >Back to Main Page</Button>
+          >
+            Back to Main Page
+          </Button>
           <Box p={6} textAlign="center"></Box>
           <Box flex="1" minH="400px" mb={4} p={0}>
             <Image
@@ -52,23 +53,23 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               alt={recipe.label}
               objectFit="cover"
               borderRadius="lg"
-               w="50vw" 
-               h="45vh" 
-              m={0} 
-              p={0} 
+              w="50vw"
+              h="45vh"
+              m={0}
+              p={0}
             />
           </Box>
 
           <Grid
-            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} 
-            gap={6} 
-            textAlign="center" 
+            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+            gap={6}
+            textAlign="center"
           >
             <Box>
               <Text fontSize="md" mb={4}>
                 {formatMealType(mealType)}
               </Text>
-              <Text fontSize="2xl" fontWeight="bold" mb={4} p={5}  >
+              <Text fontSize="2xl" fontWeight="bold" mb={4} p={5}>
                 {recipe.label}
               </Text>
 
@@ -80,45 +81,53 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               </Text>
               <Text fontSize="md" mb={4} p={5}>
                 Service:{" "}
-                <Text as="span" fontWeight="bold" >
+                <Text as="span" fontWeight="bold">
                   {recipe.yield}
-                </Text >
-                <IngredientsListing ingredients={ingredientLines}  />
+                </Text>
+                <IngredientsListing ingredients={ingredientLines} />
               </Text>
             </Box>
-            <Grid templateColumns={{ base: "1fr 1fr", md: "1fr 1fr" }} 
-            gap={2} 
-            
-            textAlign="center" >
-            <Box>
-              {healthLabels && healthLabels.length > 0 && (
-                <LabelListing
-                  listLabels={healthLabels}
-                  title="Health labels:"
-                  bgColor="#c974e8"
-                />
-                
-              )}
-              {dietLabels && dietLabels.length > 0 && (
-                <LabelListing
-                  listLabels={dietLabels}
-                  title="Diet:"
-                  bgColor="#52e385"
-                />
-              )}
-              {cautions && cautions.length > 0 && (
-                <LabelListing
-                  listLabels={cautions}
-                  title="Cautions:"
-                  bgColor="#e37dc8"
-                />
-              )}
-              <TotalNutrients alignItems="left" nutrients={totalNutrients} />
-            </Box>
+            <Grid
+              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+              gap={2}
+              textAlign="center"
+              justifyContent="center"
+              alignItems="center"
+              display="flex"
+            >
+              <Box>
+                {healthLabels && healthLabels.length > 0 && (
+                  <LabelListing
+                    listLabels={healthLabels}
+                    title="Health labels:"
+                    bgColor="#c974e8"
+                    textAlign="center"
+                    justifyContent="center"
+                    alignItems="center"
+                    display="flex"
+                  />
+                )}
+                {dietLabels && dietLabels.length > 0 && (
+                  <LabelListing
+                    listLabels={dietLabels}
+                    title="Diet:"
+                    bgColor="#52e385"
+                  />
+                )}
+                {cautions && cautions.length > 0 && (
+                  <LabelListing
+                    listLabels={cautions}
+                    title="Cautions:"
+                    bgColor="#e37dc8"
+                  />
+                )}
+                <TotalNutrients alignItems="left" nutrients={totalNutrients} />
+              </Box>
             </Grid>
           </Grid>
 
           <Button
+          mt={8}
             onClick={clickFn}
             variant="ghost"
             bg="purple.500"
