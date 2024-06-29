@@ -50,6 +50,9 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           </Button>
           <Box p={6} textAlign="center"></Box>
           <Box flex="1" minH="400px" mb={4} p={0}>
+          <Text fontSize="2xl" fontWeight="bold" mb={4} p={5} textAlign="center">
+                {recipe.label}
+              </Text>
             <Image
               src={recipe.image}
               alt={recipe.label}
@@ -71,9 +74,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               <Text fontSize="md" mb={4}>
                 {formatMealType(mealType)}
               </Text>
-              <Text fontSize="2xl" fontWeight="bold" mb={4} p={5}>
-                {recipe.label}
-              </Text>
+              
 
               <Text fontSize="md" mb={4}>
                 Total cooking time:{" "}
