@@ -28,17 +28,28 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
       bg="gray.100"
       p={4}
     >
+      
       <Box
         bg="white"
-        w={["90%", "80%", "70%"]}
+        w={["80%", "70%", "60%"]}
         maxW="1200px"
         borderRadius="lg"
         boxShadow="lg"
         overflow="hidden"
       >
+        <Button
+              onClick={clickFn}
+              variant="ghost"
+              bg="purple.500"
+              padding={5}
+              color="white"
+              _hover={{ bg: "teal.800" }}
+            >
+              Main
+            </Button>
         <Flex direction="column" align="center">
           <Box p={6} textAlign="center"></Box>
-          <Box flex="1" minH="400px" mb={6}>
+          <Box flex="1" minH="400px" mb={6} >
             <Image
               src={recipe.image}
               alt={recipe.label}
@@ -91,7 +102,10 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               )}
               <TotalNutrients alignItems="left" nutrients={totalNutrients} />
             </Text>
-            <Button
+            
+          </Box>
+        </Flex>
+        <Button
               onClick={clickFn}
               variant="ghost"
               bg="purple.500"
@@ -99,10 +113,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               color="white"
               _hover={{ bg: "teal.800" }}
             >
-              Back to Main Page
+              Main
             </Button>
-          </Box>
-        </Flex>
       </Box>
     </Box>
   );
