@@ -49,10 +49,13 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
             Back to Main Page
           </Button>
           <Box p={6} textAlign="center"></Box>
-          <Box flex="1" minH="400px" mb={4} p={0}>
-          <Text fontSize="2xl" fontWeight="bold" mb={4} p={5} textAlign="center">
+          <Text fontSize="4xl" fontWeight="bold" mb={4} p={5} textAlign="center"
+          fontStyle="italic"
+          >
                 {recipe.label}
               </Text>
+          <Box flex="1" minH="400px" mb={4} p={0}>
+            
             <Image
               src={recipe.image}
               alt={recipe.label}
