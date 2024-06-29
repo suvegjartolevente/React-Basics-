@@ -4,15 +4,40 @@ import { Box, Text, Button } from "@chakra-ui/react";
 export const TotalNutrients = ({ nutrients }) => {
   const [showAll, setShowAll] = useState(false);
 
-  
-  const allNutritions = Object.keys(nutrients).map((key) => ({
+ const nutrientsOrder = [
+    "ENERC_KCAL",
+    "PROCNT",
+    "FAT",
+    "CHOCDF",
+    "CHOLE",
+    "NA"
+  ];
+
+  const nutrientLabels = {
+    ENERC_KCAL: "Energy",
+    PROCNT: "Protein",
+    FAT: "Fat",
+    CHOCDF: "Carbs",
+    CHOLE: "Cholesterol",
+    NA: "Sodium"
+  };
+
+  const initialNutritions = nutrientsOrder.map((key) => ({
+    label: nutrientLabels[key] || nutrients[key].label,
+    quantity: nutrients[key]?.quantity?.toFixed(2) || "0.00",
+    unit: nutrients[key]?.unit || ""
+  }));
+
+  const remainingNutritions = Object.keys(nutrients)
+  .filter((key) => !nutrientsOrder.includes(key))
+  .map((key) => ({
     label: nutrients[key].label,
     quantity: nutrients[key].quantity.toFixed(2),
     unit: nutrients[key].unit,
   }));
 
-  const initialNutritions = allNutritions.slice(0, 5);
-
+  const allNutritions = [...initialNutritions, ...remainingNutritions];
+  
   const handleToggle = () => {
     setShowAll(!showAll);
   };
@@ -37,7 +62,7 @@ export const TotalNutrients = ({ nutrients }) => {
       )}
 
       {showAll &&
-        allNutritions.slice(5).map((nutrition, index) => (
+        allNutritions.slice(6).map((nutrition, index) => (
           <Text key={index}>
             {nutrition.label}: {nutrition.quantity} {nutrition.unit}
           </Text>

@@ -38,7 +38,7 @@ export const LabelListing = ({
             width="8em"
             textAlign={textAlign}
             display="flex"
-            justifyContent="center" // Center the content within the box
+            justifyContent="center" 
           >
             <Text fontSize="sm" color="white"  textAlign={textAlign}
             display="flex"
