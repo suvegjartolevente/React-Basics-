@@ -6,7 +6,7 @@ export const RecipeListPage = ({ recipes, onItemClick }) => {
   return (
     <>
       <Center flexDir="column" py={8}>
-        <Heading mb={8}>Your Recipe App</Heading>
+        <Heading mb={8}>Recipes</Heading>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
           {recipes.map((hit, index) => (
             <RecipeItemCard

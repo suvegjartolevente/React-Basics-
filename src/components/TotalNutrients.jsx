@@ -7,7 +7,7 @@ export const TotalNutrients = ({ nutrients }) => {
   
   const allNutritions = Object.keys(nutrients).map((key) => ({
     label: nutrients[key].label,
-    quantity: nutrients[key].quantity,
+    quantity: nutrients[key].quantity.toFixed(2),
     unit: nutrients[key].unit,
   }));
 

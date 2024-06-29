@@ -5,11 +5,12 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
   const { dietLabels, cautions, dishType, healthLabels } = recipe;
 
   const filteredHealthLabels = healthLabels?.filter(
-    (label) => label === "Vegan" || label === "Vegetarian"
+    (label) => label === "Vegan" || label === "Vegetarian" || label === "Pescatarian"
   );
 
   return (
     <Box
+     boxShadow="20px 20px 20px #6c81a3"
       onClick={onClick}
       cursor="pointer"
       display="flex"
@@ -21,7 +22,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
       color="white"
       borderRadius="lg"
       maxW="sm"
-      boxShadow="md"
+      
       _hover={{ transform: "scale(1.01)" }}
     >
       <Box

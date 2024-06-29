@@ -37,6 +37,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
       >
         <Flex direction="column" align="center">
           <Button
+          mt={3}
             onClick={clickFn}
             variant="ghost"
             bg="purple.500"
@@ -127,6 +128,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           </Grid>
 
           <Button
+          mb={3}
           mt={8}
             onClick={clickFn}
             variant="ghost"

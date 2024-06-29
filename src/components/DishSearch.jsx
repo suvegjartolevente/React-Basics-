@@ -20,7 +20,9 @@ export const DishSearch = ({ recipes, onItemClick }) => {
   });
 
   return (
-    <Box mb={8} alignItems="center"  display="flex" flexDirection="column"  minHeight="100vh">
+
+    <Box  p={4} mb={8} alignItems="center"  display="flex" flexDirection="column"  >
+      <Box  alignItems="center"  display="flex" flexDirection="column"  >
       <Text fontSize="lg" mb={2}>
         Search for dishes:
       </Text>
@@ -48,6 +50,7 @@ export const DishSearch = ({ recipes, onItemClick }) => {
         </Button>
       </Box>
       <RecipeListPage recipes={matchedDishes} onItemClick={onItemClick} />
+      </Box>
     </Box>
   );
 };
