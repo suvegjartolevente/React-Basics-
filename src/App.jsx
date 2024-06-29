@@ -26,6 +26,7 @@ export const App = () => {
         alignItems="center"
         justifyContent="center"
         minHeight="100vh"
+        bg="#FFF5E1"
       >
         {selectedItem ? (
           <RecipeItemPage

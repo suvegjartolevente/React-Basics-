@@ -6,7 +6,8 @@ export const TextInput = ({ changeFn, ...props }) => {
     <Input
       variant="flushed"
       placeholder="choose dish "
-      _placeholder={{ opacity: 0.2, color: "green.500" }}
+      color="#803D3B"
+      _placeholder={{ opacity: 0.2, color: "#803D3B" }}
       size="lg"
       onChange={changeFn}
       {...props}

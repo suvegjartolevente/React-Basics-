@@ -20,15 +20,16 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
 
   return (
     <Box
+
       w="100vw"
       display="flex"
       justifyContent="center"
       alignItems="center"
-      bg="gray.100"
+      bg="#FFF5E1"
       p={4}
     >
       <Box
-        bg="white"
+        bg="#F9D689"
         w={["90%", "80%", "70%"]}
         maxW="1200px"
         borderRadius="lg"
@@ -40,7 +41,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           mt={3}
             onClick={clickFn}
             variant="ghost"
-            bg="purple.500"
+            bg="#973131"
             padding={5}
             color="white"
             _hover={{ bg: "teal.800" }}
@@ -101,7 +102,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   <LabelListing
                     listLabels={healthLabels}
                     title="Health labels:"
-                    bgColor="#c974e8"
+                    bgColor="#A1DD70"
+                    
                     textAlign="center"
                     justifyContent="center"
                     alignItems="center"
@@ -112,14 +114,14 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   <LabelListing
                     listLabels={dietLabels}
                     title="Diet:"
-                    bgColor="#52e385"
+                    bgColor="#EE4E4E"
                   />
                 )}
                 {cautions && cautions.length > 0 && (
                   <LabelListing
                     listLabels={cautions}
                     title="Cautions:"
-                    bgColor="#e37dc8"
+                    bgColor="#799351"
                   />
                 )}
                 <TotalNutrients alignItems="left" nutrients={totalNutrients} />
@@ -132,7 +134,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           mt={8}
             onClick={clickFn}
             variant="ghost"
-            bg="purple.500"
+            bg="#973131"
             padding={5}
             color="white"
             _hover={{ bg: "teal.800" }}

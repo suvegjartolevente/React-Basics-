@@ -16,7 +16,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      bg="#5FBCD8"
+      bg="#304463"
       w="100%"
       p={4}
       color="white"
@@ -26,7 +26,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
       _hover={{ transform: "scale(1.01)" }}
     >
       <Box
-        bg="#e8e1d5"
+        bg="#F9D689"
         borderRadius="lg"
         width="100%"
         height="100%"
@@ -53,7 +53,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
             <LabelListing
               listLabels={filteredHealthLabels}
               title="Health labels:"
-              bgColor="#c974e8"
+              bgColor="#A1DD70"
               fontWeight="bold"
             />
           )}
@@ -61,7 +61,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
             <LabelListing
               listLabels={dietLabels}
               fontWeight="normal"
-              bgColor="#52e385"
+              bgColor="#EE4E4E"
             />
           )}
           <Text fontSize="md" mb={4} color="black">
@@ -73,7 +73,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
               fontWeight="normal"
               title="Cautions:"
               color="black"
-              bgColor="#e89b2e"
+              bgColor="#799351"
             />
           )}
         </Box>
