@@ -20,7 +20,7 @@ export const DishSearch = ({ recipes, onItemClick }) => {
   });
 
   return (
-    <Box mb={8} alignItems="center" justifyContent="center" minHeight="100vh">
+    <Box mb={8} alignItems="center"  display="flex" flexDirection="column"  minHeight="100vh">
       <Text fontSize="lg" mb={2}>
         Search for dishes:
       </Text>

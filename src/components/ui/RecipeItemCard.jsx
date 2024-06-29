@@ -1,15 +1,8 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import { LabelListing } from "./LabelTypes";
 
-
-
 export const RecipeItemCard = ({ recipe, onClick }) => {
-  const {
-    dietLabels,
-    cautions,
-     dishType,
-     healthLabels
-  } = recipe;
+  const { dietLabels, cautions, dishType, healthLabels } = recipe;
 
   const filteredHealthLabels = healthLabels?.filter(
     (label) => label === "Vegan" || label === "Vegetarian"
@@ -31,17 +24,24 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
       boxShadow="md"
       _hover={{ transform: "scale(1.01)" }}
     >
-      <Box bg="#e8e1d5" borderRadius="lg" width="100%" height="100%" display="flex" flexDirection="column" >
-        <Box w="100%" p={2} height="250px" overflow="hidden" > 
+      <Box
+        bg="#e8e1d5"
+        borderRadius="lg"
+        width="100%"
+        height="100%"
+        display="flex"
+        flexDirection="column"
+      >
+        <Box w="100%" p={2} height="250px" overflow="hidden">
           <Image
             src={recipe.image}
-             w="100%"
-             h="100%"
-             objectFit="cover"
+            w="100%"
+            h="100%"
+            objectFit="cover"
             borderRadius="md"
           />
         </Box>
-        <Box textAlign="center"   mt={2} mx="auto">
+        <Box textAlign="center" mt={2} mx="auto">
           <Text as="h2" color="black" p={2}>
             {recipe.mealType}
           </Text>
@@ -64,18 +64,16 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
             />
           )}
           <Text fontSize="md" mb={4} color="black">
-          Dish: {recipe.dishType}
-            </Text>
+            Dish: {recipe.dishType}
+          </Text>
           {cautions && cautions.length > 0 && (
-            
             <LabelListing
               listLabels={cautions}
               fontWeight="normal"
-              title="Cautions:" 
-              color= "black"
+              title="Cautions:"
+              color="black"
               bgColor="#e89b2e"
             />
-            
           )}
         </Box>
       </Box>

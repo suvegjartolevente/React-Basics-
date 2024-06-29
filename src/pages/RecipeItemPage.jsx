@@ -35,20 +35,32 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
         boxShadow="lg"
         overflow="hidden"
       >
+        
         <Flex direction="column" align="center">
+        <Button
+            onClick={clickFn}
+            variant="ghost"
+            bg="purple.500"
+            padding={5}
+            color="white"
+            _hover={{ bg: "teal.800" }}
+          >Back to Main Page</Button>
           <Box p={6} textAlign="center"></Box>
-          <Box flex="1" minH="400px" mb={6}>
+          <Box flex="1" minH="400px" mb={4} p={0}>
             <Image
               src={recipe.image}
               alt={recipe.label}
               objectFit="cover"
-              w="50vw" 
-              h="30vh" 
+              borderRadius="lg"
+               w="50vw" 
+               h="45vh" 
+              m={0} 
+              p={0} 
             />
           </Box>
 
           <Grid
-            templateColumns={{ base: "1fr", md: "1fr 1fr" }} 
+            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} 
             gap={6} 
             textAlign="center" 
           >
@@ -56,7 +68,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               <Text fontSize="md" mb={4}>
                 {formatMealType(mealType)}
               </Text>
-              <Text fontSize="2xl" fontWeight="bold" mb={4}>
+              <Text fontSize="2xl" fontWeight="bold" mb={4} p={5}  >
                 {recipe.label}
               </Text>
 
@@ -66,15 +78,18 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   {totalTime} minutes
                 </Text>
               </Text>
-              <Text fontSize="md" mb={4}>
+              <Text fontSize="md" mb={4} p={5}>
                 Service:{" "}
-                <Text as="span" fontWeight="bold">
+                <Text as="span" fontWeight="bold" >
                   {recipe.yield}
-                </Text>
-                <IngredientsListing ingredients={ingredientLines} />
+                </Text >
+                <IngredientsListing ingredients={ingredientLines}  />
               </Text>
             </Box>
-
+            <Grid templateColumns={{ base: "1fr 1fr", md: "1fr 1fr" }} 
+            gap={2} 
+            
+            textAlign="center" >
             <Box>
               {healthLabels && healthLabels.length > 0 && (
                 <LabelListing
@@ -82,6 +97,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   title="Health labels:"
                   bgColor="#c974e8"
                 />
+                
               )}
               {dietLabels && dietLabels.length > 0 && (
                 <LabelListing
@@ -99,6 +115,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               )}
               <TotalNutrients alignItems="left" nutrients={totalNutrients} />
             </Box>
+            </Grid>
           </Grid>
 
           <Button

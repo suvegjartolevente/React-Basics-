@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text,Grid } from "@chakra-ui/react";
 
 export const LabelListing = ({
   listLabels,
@@ -13,6 +13,11 @@ export const LabelListing = ({
       <Text fontSize="lg" mb={2} color="black" fontWeight={fontWeight}>
         {title}
       </Text>
+      <Grid
+        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+        gap={2}
+        width="100%"
+      >
       {listLabels.map((label, index) => (
         <Box
           key={index}
@@ -20,7 +25,7 @@ export const LabelListing = ({
           p={1}
           mb={1}
           borderRadius="md"
-          width={"12em"}
+           width={"8em"}
           textAlign={textAlign} 
         >
           <Text fontSize="sm" color="white">
@@ -28,6 +33,8 @@ export const LabelListing = ({
           </Text>
         </Box>
       ))}
+      </Grid>
     </Box>
+    
   );
 };
