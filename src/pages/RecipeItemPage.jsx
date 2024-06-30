@@ -20,6 +20,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
 
   return (
     <Box
+      userSelect="none"
+      cursor="default"
       w="100vw"
       display="flex"
       justifyContent="center"

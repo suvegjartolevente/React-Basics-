@@ -24,7 +24,8 @@ export const DishSearch = ({ recipes, onItemClick }) => {
   });
 
   return (
-    <Box p={4} mb={8} alignItems="center" display="flex" flexDirection="column">
+    <Box p={4} mb={8} alignItems="center" display="flex" flexDirection="column" userSelect="none"
+    cursor="default">
       <Box alignItems="center" display="flex" flexDirection="column">
         <Text fontSize="lg" mb={2}>
           Search for dishes:
