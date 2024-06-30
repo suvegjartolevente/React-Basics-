@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ChakraProvider, Box } from "@chakra-ui/react";
-// import { RecipeListPage } from "./pages/RecipeListPage";
 import { RecipeItemPage } from "./pages/RecipeItemPage";
 import { DishSearch } from "./components/DishSearch";
 import { data } from "./utils/data";

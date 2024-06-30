@@ -20,7 +20,6 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
 
   return (
     <Box
-
       w="100vw"
       display="flex"
       justifyContent="center"
@@ -38,7 +37,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
       >
         <Flex direction="column" align="center">
           <Button
-          mt={3}
+            mt={3}
             onClick={clickFn}
             variant="ghost"
             bg="#973131"
@@ -49,13 +48,17 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
             Back to Main Page
           </Button>
           <Box p={6} textAlign="center"></Box>
-          <Text fontSize="4xl" fontWeight="bold" mb={4} p={5} textAlign="center"
-          fontStyle="italic"
+          <Text
+            fontSize="4xl"
+            fontWeight="bold"
+            mb={4}
+            p={5}
+            textAlign="center"
+            fontStyle="italic"
           >
-                {recipe.label}
-              </Text>
+            {recipe.label}
+          </Text>
           <Box flex="1" minH="400px" mb={4} p={0}>
-            
             <Image
               src={recipe.image}
               alt={recipe.label}
@@ -77,7 +80,6 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
               <Text fontSize="md" mb={4}>
                 {formatMealType(mealType)}
               </Text>
-              
 
               <Text fontSize="md" mb={4}>
                 Total cooking time:{" "}
@@ -107,7 +109,6 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                     listLabels={healthLabels}
                     title="Health labels:"
                     bgColor="#A1DD70"
-                    
                     textAlign="center"
                     justifyContent="center"
                     alignItems="center"
@@ -134,8 +135,8 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           </Grid>
 
           <Button
-          mb={3}
-          mt={8}
+            mb={3}
+            mt={8}
             onClick={clickFn}
             variant="ghost"
             bg="#973131"

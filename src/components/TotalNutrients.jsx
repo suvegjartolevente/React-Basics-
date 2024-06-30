@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
 
 export const TotalNutrients = ({ nutrients }) => {

@@ -14,16 +14,17 @@ export const LabelListing = ({
       mb={4}
       display="flex"
       flexDirection="column"
-      alignItems="center" 
+      alignItems={alignItems}
       width="100%"
     >
       <Text fontSize="lg" mb={2} color="black" fontWeight={fontWeight}>
         {title}
       </Text>
       <Grid
+        
         templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(2, 1fr)" }}
         gap={2}
-        justifyContent="center" 
+        justifyContent={justifyContent}
         alignItems="center"
         width="100%"
         m={2}
@@ -38,16 +39,20 @@ export const LabelListing = ({
             width="8em"
             textAlign={textAlign}
             display="flex"
-            justifyContent="center" 
+            justifyContent="center"
           >
-            <Text fontSize="sm" color="white"  textAlign={textAlign}
-            display="flex"
-            justifyContent="center" >
+            <Text
+              fontSize="sm"
+              color="white"
+              textAlign={textAlign}
+              display="flex"
+              justifyContent="center"
+            >
               {label}
             </Text>
           </Box>
         ))}
-      </Grid> 
+      </Grid>
     </Box>
   );
 };

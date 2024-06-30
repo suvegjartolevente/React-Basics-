@@ -10,6 +10,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
 
   return (
     <Box
+    overflow="hidden"
      boxShadow="20px 20px 20px #6c81a3"
       onClick={onClick}
       cursor="pointer"
@@ -26,6 +27,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
       _hover={{ transform: "scale(1.01)" }}
     >
       <Box
+      overflow="hidden"
         bg="#F9D689"
         borderRadius="lg"
         width="100%"
@@ -42,7 +44,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
             borderRadius="md"
           />
         </Box>
-        <Box textAlign="center" mt={2} mx="auto">
+        <Box textAlign="center" mt={2} mx="auto" >
           <Text as="h2" color="black" p={2}>
             {recipe.mealType}
           </Text>
@@ -51,6 +53,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
           </Text>
           {filteredHealthLabels && filteredHealthLabels.length > 0 && (
             <LabelListing
+            
               listLabels={filteredHealthLabels}
               title="Health labels:"
               bgColor="#A1DD70"
