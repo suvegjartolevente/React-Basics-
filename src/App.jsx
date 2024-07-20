@@ -33,9 +33,14 @@ export const App = () => {
             clickFn={handleBackToMainPage}
           />
         ) : (
-          <DishSearch className="DishSearch" display="flex" 
-          alignItems="center"
-          justifyContent="center" recipes={data.hits} onItemClick={handleItemClick} />
+          <DishSearch
+            className="DishSearch"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            recipes={data.hits}
+            onItemClick={handleItemClick}
+          />
         )}
       </Box>
     </ChakraProvider>

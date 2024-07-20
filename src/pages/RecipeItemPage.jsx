@@ -20,7 +20,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
 
   return (
     <Box
-      userSelect="none"
+      userSelect="text"
       cursor="default"
       w="100vw"
       display="flex"
@@ -49,8 +49,9 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           >
             Back to Main Page
           </Button>
-          <Box p={6} textAlign="center"></Box>
+          <Box p={6} userSelect="none" textAlign="center"></Box>
           <Text
+            userSelect="text"
             fontSize="4xl"
             fontWeight="bold"
             mb={4}
@@ -60,8 +61,9 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
           >
             {recipe.label}
           </Text>
-          <Box flex="1" minH="400px" mb={4} p={0}>
+          <Box flex="1" minH="400px" mb={4} p={0} userSelect="none">
             <Image
+              userSelect="none"
               src={recipe.image}
               alt={recipe.label}
               objectFit="cover"
@@ -78,7 +80,7 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
             gap={6}
             textAlign="center"
           >
-            <Box>
+            <Box userSelect="contain">
               <Text fontSize="md" mb={4}>
                 {formatMealType(mealType)}
               </Text>
@@ -89,13 +91,13 @@ export const RecipeItemPage = ({ recipe, clickFn }) => {
                   {totalTime} minutes
                 </Text>
               </Text>
-              <Text fontSize="md" mb={4} p={5}>
+              <Box fontSize="md" mb={4} p={5}>
                 Service:{" "}
                 <Text as="span" fontWeight="bold">
                   {recipe.yield}
                 </Text>
                 <IngredientsListing ingredients={ingredientLines} />
-              </Text>
+              </Box>
             </Box>
             <Grid
               templateColumns={{ base: "1fr", md: "1fr 1fr" }}
